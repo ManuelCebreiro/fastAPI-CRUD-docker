@@ -46,7 +46,8 @@ jobs:
 
       - name: Set DATABASE_URL environment variable
         run: |
-          echo "DATABASE_URL=postgresql+psycopg2://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
+          echo "DATABASE_URL=postgresql+psycopg2://postgres:postgres@localhost:5432/test_db" >> $GITHUB_ENV
+          # Aquí podrías usar secrets si quieres, pero para el servicio postgres debes usar hardcode
 
       - name: Run database migrations (Alembic)
         run: alembic upgrade head
