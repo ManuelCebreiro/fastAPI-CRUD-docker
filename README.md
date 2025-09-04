@@ -99,3 +99,5 @@ fastapi-crud-docker/
 ├─ .env
 ├─ pyproject.toml
 └─ .gitignore
+
+testing
