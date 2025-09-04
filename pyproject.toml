@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Proyecto CRUD con FastAPI, PostgreSQL y Docker"
 authors = ["Manuel Cebreiro"]
 license = "MIT"
+packages = [
+    { include = "app" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"

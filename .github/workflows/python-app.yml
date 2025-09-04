@@ -42,12 +42,11 @@ jobs:
           export PATH="$HOME/.local/bin:$PATH"
 
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --no-root
 
       - name: Set DATABASE_URL environment variable
         run: |
-          echo "DATABASE_URL=postgresql+psycopg2://postgres:postgres@localhost:5432/test_db" >> $GITHUB_ENV
-          # Aquí podrías usar secrets si quieres, pero para el servicio postgres debes usar hardcode
+          echo "DATABASE_URL=postgresql+psycopg2://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
 
       - name: Run database migrations (Alembic)
         run: alembic upgrade head
