@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "fastapi-crud-docker"
+version = "0.1.0"
+description = "Proyecto CRUD con FastAPI, PostgreSQL y Docker"
+authors = ["Manuel Cebreiro"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+sqlalchemy = "^2.0.20"
+psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.4.1"
+pytest-asyncio = "^0.21.0"
+httpx = "^0.26.1"
+
+[build-system]
+requires = ["poetry-core>=1.6.0"]
+build-backend = "poetry.core.masonry.api"
